@@ -64,8 +64,10 @@
     }
 
     img {
-      width: 90px;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
+      object-fit: cover;
       margin-bottom: 15px;
       box-shadow: 0 0 20px rgba(255,255,255,0.3);
     }
@@ -81,8 +83,8 @@
 
 <div class="card">
 
-  <!-- FOTO -->
-  <img src="https://drive.google.com/uc?export=view&id=1GVMtT923xib0FN2ovhjqVzf4YTRaKu25">
+  <!-- FOTO (FIX GOOGLE DRIVE) -->
+  <img src="https://drive.google.com/thumbnail?id=1GVMtT923xib0FN2ovhjqVzf4YTRaKu25&sz=w200">
 
   <!-- STATUS -->
   <div class="status" id="status"></div>
@@ -90,33 +92,42 @@
   <h1>MIXEL KRISTIAN</h1>
   <p>Quality Assurance Manager</p>
 
-  <!-- WA -->
+  <!-- WHATSAPP -->
   <a class="btn" href="https://api.whatsapp.com/send?phone=628xxxxxxxxxx">
     Chat WhatsApp
   </a>
 
-  <!-- PLAY MUSIC -->
-  <button onclick="playMusic()" class="btn">
-    Play Music
-  </button>
-
   <p style="font-size:12px;">Smart Access Card</p>
 </div>
 
-<!-- AUDIO -->
-<audio id="bgm" loop>
-  <source src="https://drive.google.com/uc?export=download&id=1018lKAvtBY0L2uW9g_DA05rkUMl0Nhco">
+<!-- AUDIO AUTOPLAY -->
+<audio id="bgm" autoplay loop muted>
+  <source src="https://drive.google.com/uc?export=download&id=1018lKAvtBY0L2uW9g_DA05rkUMl0Nhco" type="audio/mpeg">
 </audio>
 
 <script>
+  // STATUS REALTIME
   setInterval(()=>{
     document.getElementById("status").innerHTML =
     "🟢 Online - " + new Date().toLocaleTimeString();
   },1000);
 
-  function playMusic(){
-    document.getElementById("bgm").play();
-  }
+  // AUTO PLAY FIX (WAJIB INTERAKSI)
+  window.addEventListener("click", function() {
+    let audio = document.getElementById("bgm");
+    audio.muted = false;
+    audio.volume = 0;
+
+    audio.play().then(()=>{
+      let fade = setInterval(() => {
+        if (audio.volume < 1) {
+          audio.volume += 0.05;
+        } else {
+          clearInterval(fade);
+        }
+      }, 200);
+    });
+  }, { once: true });
 </script>
 
 </body>
