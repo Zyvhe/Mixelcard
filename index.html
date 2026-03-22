@@ -36,7 +36,7 @@
 
     p {
       color: #aaa;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
 
     .btn {
@@ -59,8 +59,15 @@
 
     .status {
       font-size: 13px;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
       color: #0f0;
+    }
+
+    img {
+      width: 90px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.3);
     }
 
     @keyframes fadeIn {
@@ -73,17 +80,44 @@
 <body>
 
 <div class="card">
-  <div class="status">🟢 Access Active</div>
+
+  <!-- FOTO -->
+  <img src="https://drive.google.com/uc?export=view&id=1GVMtT923xib0FN2ovhjqVzf4YTRaKu25">
+
+  <!-- STATUS -->
+  <div class="status" id="status"></div>
 
   <h1>MIXEL KRISTIAN</h1>
   <p>Quality Assurance Manager</p>
 
+  <!-- WA -->
   <a class="btn" href="https://api.whatsapp.com/send?phone=628xxxxxxxxxx">
     Chat WhatsApp
   </a>
 
+  <!-- PLAY MUSIC -->
+  <button onclick="playMusic()" class="btn">
+    Play Music
+  </button>
+
   <p style="font-size:12px;">Smart Access Card</p>
 </div>
+
+<!-- AUDIO -->
+<audio id="bgm" loop>
+  <source src="https://drive.google.com/uc?export=download&id=1018lKAvtBY0L2uW9g_DA05rkUMl0Nhco">
+</audio>
+
+<script>
+  setInterval(()=>{
+    document.getElementById("status").innerHTML =
+    "🟢 Online - " + new Date().toLocaleTimeString();
+  },1000);
+
+  function playMusic(){
+    document.getElementById("bgm").play();
+  }
+</script>
 
 </body>
 </html>
