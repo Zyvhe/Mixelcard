@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mixel Kristian</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      text-align: center;
+      padding: 30px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 30px rgba(255,255,255,0.1);
+      animation: fadeIn 1.2s ease;
+      width: 90%;
+      max-width: 350px;
+    }
+
+    h1 {
+      margin: 10px 0;
+      font-size: 22px;
+      letter-spacing: 1px;
+    }
+
+    p {
+      color: #aaa;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: block;
+      padding: 14px;
+      margin: 10px 0;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: bold;
+      background: linear-gradient(90deg,#25D366,#1ebe5d);
+      color: white;
+      box-shadow: 0 0 15px rgba(37,211,102,0.6);
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(37,211,102,1);
+    }
+
+    .status {
+      font-size: 13px;
+      margin-bottom: 15px;
+      color: #0f0;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+  <div class="status">🟢 Access Active</div>
+
+  <h1>MIXEL KRISTIAN</h1>
+  <p>Quality Assurance Manager</p>
+
+  <a class="btn" href="https://api.whatsapp.com/send?phone=628xxxxxxxxxx">
+    Chat WhatsApp
+  </a>
+
+  <p style="font-size:12px;">Smart Access Card</p>
+</div>
+
+</body>
+</html>
